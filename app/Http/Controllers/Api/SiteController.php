@@ -10,10 +10,11 @@ class SiteController extends Controller
 {
     public function index(){
 
-        $sites = PortfolioModel::all();
+        $sites = PortfolioModel::with('type', 'technologies')->paginate(6);
+       
         return response()->json([
-            'success' => true,
-            'results' => $sites,
+            'success'=>true,
+            'results'=>$sites,
         ]);
     }
 }

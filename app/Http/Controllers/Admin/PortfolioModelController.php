@@ -21,8 +21,9 @@ class PortfolioModelController extends Controller
      */
     public function index()
     {
-        $sites = PortfolioModel::all();
-        return view('admin.works.index', compact('sites'));
+         $sites = PortfolioModel::all();
+         return view('admin.works.index', compact('sites'));
+       
     }
     
     /**
