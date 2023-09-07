@@ -4,7 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Models\PortfolioModel;
 use App\Http\Controllers\Api\SiteController;
-
+use App\Http\Controllers\Api\LeadController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -21,3 +21,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/sites', [SiteController::class, 'index']);
+
+Route::post('/contact', [LeadController::class, 'store']);
